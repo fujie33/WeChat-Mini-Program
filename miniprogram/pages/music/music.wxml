@@ -4,7 +4,7 @@
     <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
   </swiper-item>
 </swiper>
-<text class="title"> 场景歌单</text>
+<text class="title"> 场景歌单 </text>
 <view class="playlist-container">
   <block wx:for="{{playlist}}" wx:key="id">
     <x-playlist playlist="{{item}}"></x-playlist>
