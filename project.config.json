@@ -67,6 +67,12 @@
           "pathName": "pages/test/test",
           "query": "For Example: name=vendor&colore=black",
           "scene": null
+        },
+        {
+          "name": "musiclist",
+          "pathName": "pages/musiclist/musiclist",
+          "query": "playlistId=5342642424",
+          "scene": null
         }
       ]
     }
