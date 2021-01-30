@@ -30,3 +30,7 @@
   font-size: 24rpx;
   color: #888;
 }
+/*高亮样式*/
+.playing view,.playing text{
+  color:#d43c43;
+}

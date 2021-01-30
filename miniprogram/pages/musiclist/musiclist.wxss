@@ -16,7 +16,7 @@
   z-index: -1;
 }
 /* 详情信息容器，flex布局，绝对定位在吸顶位置，垂直方向（次轴）居中，水平方向（主轴）左对齐*/
-.deatail-info {
+.detail-info {
   display: flex;
   position: absolute;
   top: 0;
@@ -28,16 +28,19 @@
   align-items: center;
 }
 /*左边的图片*/
-.detail-img {
+.detail-img{
   width: 280rpx;
   height: 280rpx;
   margin-right: 24rpx;
   border-radius: 6rpx;
 }
-/*右边的图片*/
-.detail-name {
-  color:#FFFFFF;
-  font-size:36rpx;
+/*右边的文字*/
+.detail-name{
+  color: #ffffff;
+  font-size: 36rpx;
   line-height: 1.5;
   font-weight: 400;
 }
+
+
+

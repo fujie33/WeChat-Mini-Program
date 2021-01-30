@@ -30,7 +30,7 @@ Component({
     //跳转到歌单详情页（歌曲页）
     goToMusiclist() {
      wx.navigateTo({
-       url: '../../pages/musiclist/musiclist?playlistId=${this.properties.playlist.id}',
+       url: `../../pages/musiclist/musiclist?playlistId=${this.properties.playlist.id}`,
      })
     },
     _tranNumber(num , point) {
