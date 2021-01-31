@@ -77,7 +77,7 @@
         {
           "name": "player",
           "pathName": "pages/player/player",
-          "query": "playlistId=5342642424&index=0",
+          "query": "musicId=28704800&index=0",
           "scene": null
         }
       ]

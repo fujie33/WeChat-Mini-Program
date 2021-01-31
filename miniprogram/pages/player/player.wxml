@@ -1,4 +1,18 @@
 <!--pages/player/player.wxml-->
+<!--全屏毛玻璃效果-->
 <view wx:if="{{picUrl}}" class="player-container" style="background:url({{picUrl}}) center/cover no-repeat"></view>
 <view class="player-mask"></view>
-<text class="iconfont icon-bofang1"></text>
+<!--<text class="iconfont icon-bofang1"></text>-->
+<view class="player-info">
+  <!--封面信息-->
+  <view class="player-disc {{isplaying?'playing':''}}">
+    <image class="player-img zhuan {{isplaying?'':'ting'}}" src="{{picUrl}}"></image>
+  </view>
+  <!--控制面板-->
+  <view class="control">
+    <text class="iconfont icon-houtui" bind:tap="onPrev"></text>
+    <text class="iconfont {{isplaying?'icon-bofang1':'icon-xianxingtubiaozhizuomoban-21'}}" bind:tap="toggleplaying"></text>
+    <text class="iconfont icon-qianjin" bind:tap="onNext"></text>
+  </view>
+</view>
+

@@ -1,5 +1,6 @@
 // pages/player/player.js
 let musiclist = []
+const backgroundAudioManager = wx.getBackgroundAudioManager()
 //正在播放的歌曲index
 let playingIndex = 0
 Page({
@@ -8,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    picUrl: ''
+    picUrl: '',
+    isplayer: false
   },
 
   /**
@@ -20,9 +22,12 @@ Page({
     playingIndex = options.index
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
-    
   },
-  
+  toggleplaying(){
+   this.setData({
+     isplaying: !this.data.isplaying
+   })
+  },
   _loadMusicDetail(musicId) {
     let music = musiclist[playingIndex]
     console.log(music)
@@ -40,7 +45,49 @@ Page({
       }
     }).then((res) => {
       console.log(res)
+      const url = res.result.data[0].url
+      if(url === null){
+        wx.showToast({
+          title: '没有权限播放'
+        })
+        backgroundAudioManager.pause()
+        this.setData({
+          isplaying: flase
+        })
+        return
+      }
+      backgroundAudioManager.src = url
+      backgroundAudioManager.title =music.name
+      backgroundAudioManager.coverImgUrl = music.al.picUrl
+      backgroundAudioManager.singer = music.ar[0].names
+      this.setData({
+        isplaying: true
+      })
     })
+  },
+  toggleplaying(){
+    if(this.data.isplaying){
+      backgroundAudioManager.pause()
+    }else{
+      backgroundAudioManager.play()
+    }
+    this.setData({
+      isplaying: !this.data.isplaying
+    })
+  },
+  onPrev(){
+    playingIndex--
+    if(playingIndex < 0){
+      playingIndex = musiclist.length - 1
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
+  },
+  onNext(){
+    playingIndex++
+    if(playingIndex === musiclist.length){
+      playingIndex = 0
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
   },
 
   /**
