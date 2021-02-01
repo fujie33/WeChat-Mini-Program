@@ -8,6 +8,10 @@
   <view class="player-disc {{isplaying?'playing':''}}">
     <image class="player-img zhuan {{isplaying?'':'ting'}}" src="{{picUrl}}"></image>
   </view>
+  <!--进度条-->
+  <view class="progress-bar">
+    <xu-progress-bar/>
+  </view>
   <!--控制面板-->
   <view class="control">
     <text class="iconfont icon-houtui" bind:tap="onPrev"></text>
