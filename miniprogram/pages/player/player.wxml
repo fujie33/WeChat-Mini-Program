@@ -5,9 +5,11 @@
 <!--<text class="iconfont icon-bofang1"></text>-->
 <view class="player-info">
   <!--封面信息-->
-  <view class="player-disc {{isplaying?'playing':''}}">
+  <view class="player-disc {{isplaying?'playing':''}}" hidden="{{isLyricShow}}" bind:tap="onLyricShow">
     <image class="player-img zhuan {{isplaying?'':'ting'}}" src="{{picUrl}}"></image>
   </view>
+  <!--歌词-->
+   <xu-lyric isLyricShow="{{isLyricShow}}" lyric="{{lyric}}" bind:tap="onLyricShow"></xu-lyric>
   <!--进度条-->
   <view class="progress-bar" bind:musicEnd="onNext">
     <xu-progress-bar/>
