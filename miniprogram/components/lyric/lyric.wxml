@@ -1,10 +1,10 @@
 
-<view class="container" hidden="{{!isLyricShow}}"> 
+<!--<view class="container" hidden="{{!isLyricShow}}"> 
    {{lyric}}
-</view>
+</view>-->
 <scroll-view hidden="{{!isLyricShow}}" class="lyric-scroll" scroll-y>
    <view class="lyric-panel">
-      <block wx: wx:for="{{lyric}}" wx:key="index">
+      <block wx: wx:for="{{lyrics}}" wx:key="index">
          <view class="lyric">
             {{item}}
          </view>

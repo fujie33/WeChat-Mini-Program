@@ -1,2 +1,14 @@
 <!--pages/find/find.wxml-->
-<text>pages/find/find.wxml</text>
+<!--自定义导航-->
+<navigation showIcon='{{false}}' title='发现'></navigation>
+<!--顶部搜索区-->
+<view class="left" bind:tap="onPublish">
+   <!--左侧的发布图标-->
+   <i class="iconfount icon-zhenhuiichongtubiaozhizuo-kuozhan"></i>
+</view>
+<view class="right">
+   <!--引入搜索组件，接收子组件回传的search方法-->
+   <xu-search bind:search="onSearch"/>
+</view>
+
+

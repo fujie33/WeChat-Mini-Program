@@ -1,11 +1,20 @@
 // pages/find/find.js
+let keyword = ''  //搜索关键词
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-
+  data: {},
+  onSearch(event) {
+    keyword = event.detail.keyword
+    console.log(keyword)
+  },
+  onLoad(options) {},
+  onPublish() {
+    wx.navigateTo({
+      url: '../publish/publish',
+    })
   },
 
   /**
